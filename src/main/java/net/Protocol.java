@@ -1,14 +1,15 @@
 package net;
 
 import org.json.JSONObject;
-import static net.TcpConfigurationProperties.*;
+import static net.TCPConfigurationProperties.*;
+
 public interface Protocol {
-Response getResponse(Request request);
-default String getResponseWithJSON(String requestJSON) {
-    JSONObject jsonObj = new JSONObject(requestJSON);
-    String requestType = jsonObj.getString(REQUEST_TYPE_FIELD);
-    String requestData = jsonObj.getString(REQUEST_DATA_FIELD);
-    Request request = new Request(requestType, requestData);
-    return getResponse(request).toString();
-}
+    Response getResponse(Request request);
+
+    default String getResponseWithJSON(String requestJSON) {
+        JSONObject jsonObject = new JSONObject(requestJSON);
+        String requestType = jsonObject.getString(REQUEST_TYPE_FIELD);
+        String requestData = jsonObject.getString(REQUEST_DATA_FIELD);
+        return getResponse(new Request(requestType, requestData)).toString();
+    }
 }

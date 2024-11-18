@@ -1,10 +1,10 @@
 package net;
 
-public interface TcpConfigurationProperties {
+public interface TCPConfigurationProperties {
     String REQUEST_TYPE_FIELD = "requestType";
     String REQUEST_DATA_FIELD = "requestData";
     String RESPONSE_CODE_FIELD = "responseCode";
-    String RESPONSE_DATA_FIELD = "responseData";
-    int DEFAULT_INTERVAL_CONNECTION = 3000;
-    int DEFAULT_TRIALS_NUMBER_CONNECTION = 10;
+    String RESPONSE_DATA_FIELD = "responSseData";
+    int DEFAULT_INTERVAL = 3000;
+    int DEFAULT_ATTAMPTS = 10;
 }

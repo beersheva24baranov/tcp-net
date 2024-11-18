@@ -1,13 +1,14 @@
 package net;
 
 import org.json.JSONObject;
-import static net.TcpConfigurationProperties.*;
+import static net.TCPConfigurationProperties.*;
+
 public record Response(ResponseCode responseCode, String responseData) {
-@Override
-    public String toString(){
-        JSONObject jsonObj = new JSONObject();
-        jsonObj.put(RESPONSE_CODE_FIELD, responseCode);
-        jsonObj.put(RESPONSE_DATA_FIELD, responseData);
-        return jsonObj.toString();
+    @Override
+    public String toString() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put(RESPONSE_CODE_FIELD, responseCode);
+        jsonObject.put(RESPONSE_DATA_FIELD, responseData);
+        return jsonObject.toString();
     }
 }
